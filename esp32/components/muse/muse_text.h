@@ -33,6 +33,9 @@ extern "C" {
  * the character); -1 to keep it. *len is the character's length in bytes. */
 int muse_text_ascii(const char *s, size_t *len, char out[4]);
 
+/* Columns the UTF-8 character at s takes on screen: 2 for CJK, else 1. */
+int muse_text_columns(const char *s);
+
 /* Puts the stand-ins into s, which has room for cap bytes. If one doesn't fit,
  * the text ends there. */
 void muse_text_to_ascii(char *s, size_t cap);

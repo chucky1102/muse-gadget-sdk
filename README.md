@@ -64,6 +64,7 @@ upstream licenses:
 |---|---|---|
 | [`esp32/components/minimp3/include/minimp3.h`](esp32/components/minimp3) | [lieff/minimp3](https://github.com/lieff/minimp3) | CC0-1.0, see [`LICENSE`](esp32/components/minimp3/LICENSE) |
 | [`esp32/main/pixel_font.c`](esp32/main/pixel_font.c) | Adafruit GFX `glcdfont.c` | BSD-2-Clause, in the file header |
+| [`esp32/components/muse/fonts/muse_font_cjk_16.c`](esp32/components/muse/fonts/muse_font_cjk_16.c) | [GNU Unifont](https://unifoundry.com/unifont/) 16.0.04 | SIL OFL 1.1, glyph bitmaps only; built with `CONFIG_MUSE_FONT_CJK` |
 
 Dependencies fetched at build time are under their own licenses: ESP-IDF
 components (into `esp32/managed_components/`), and the simulator's LVGL and

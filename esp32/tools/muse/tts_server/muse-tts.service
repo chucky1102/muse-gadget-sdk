@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: Apache-2.0
+# systemd unit for server.py. Put MUSE_TTS_KEY=... (and optionally
+# MUSE_TTS_VOICE, PORT) in /opt/muse-tts/.env, readable by root only.
+[Unit]
+Description=TTS for Muse gadgets
+After=network-online.target
+
+[Service]
+WorkingDirectory=/opt/muse-tts
+EnvironmentFile=/opt/muse-tts/.env
+ExecStart=/opt/muse-tts/.venv/bin/python server.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

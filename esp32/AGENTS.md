@@ -52,6 +52,7 @@ before adding a feature to one.
 | Seeed reTerminal E1002 | `esp32s3` | `devices/sdkconfig.reterminal-e1002` | `tools/board.sh reterminal-e1002` |
 | Home Assistant Voice Preview Edition | `esp32s3` | `devices/sdkconfig.home-assistant-voice` | `tools/board.sh home-assistant-voice` |
 | Waveshare ESP32-S3-Touch-AMOLED-1.75C | `esp32s3` | `devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-175c` | manual (below) |
+| Waveshare ESP32-S3-Touch-AMOLED-2.16 | `esp32s3` | `devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-216` | `tools/muse/board.sh build s216` |
 | Waveshare ESP32-S3-Touch-AMOLED-1.75 | `esp32s3` | `devices/sdkconfig.muse;devices/sdkconfig.muse-waveshare-s3-175` | manual (below) |
 | Espressif ESP32-S3-BOX-3 | `esp32s3` | `devices/sdkconfig.muse;devices/sdkconfig.muse-espressif-box-3` | `tools/muse/board.sh build box3` |
 | AIPI Lite | `esp32s3` | `devices/sdkconfig.muse;devices/sdkconfig.muse-aipi` | manual |

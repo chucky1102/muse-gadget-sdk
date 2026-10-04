@@ -193,6 +193,16 @@ int muse_text_ascii(const char *s, size_t *len, char out[4])
     return (int)strlen(out);
 }
 
+int muse_text_columns(const char *s)
+{
+    size_t len;
+    int32_t cp = decode((const unsigned char *)s, &len);
+    bool wide = (cp >= 0x2E80 && cp <= 0x9FFF) || (cp >= 0xAC00 && cp <= 0xD7A3) ||
+                (cp >= 0xF900 && cp <= 0xFAFF) || (cp >= 0xFE30 && cp <= 0xFE4F) ||
+                (cp >= 0xFF00 && cp <= 0xFF60) || (cp >= 0xFFE0 && cp <= 0xFFE6);
+    return wide ? 2 : 1;
+}
+
 void muse_text_to_ascii(char *s, size_t cap)
 {
     size_t n = strlen(s);

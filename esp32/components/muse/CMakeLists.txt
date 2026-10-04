@@ -49,6 +49,9 @@ if(CONFIG_MUSE_ENABLED)
         list(APPEND srcs "muse_chat_link.c")   # text replies over Link's session
     endif()
     list(APPEND srcs "muse_chat_text.c")
+    if(CONFIG_MUSE_FONT_CJK)
+        list(APPEND srcs "fonts/muse_font_cjk_16.c")
+    endif()
     # Your own character (tools/muse/AVATAR_RECIPE.md) stands in for the default
     # avatar when avatar/muse_pixel.c exists here; this avatar/ is gitignored. The
     # default is in avatar/ at the top of the project.
@@ -62,6 +65,8 @@ if(CONFIG_MUSE_ENABLED)
     if(CONFIG_MUSE_BOARD_WAVESHARE_S3_175C OR CONFIG_MUSE_BOARD_WAVESHARE_S3_175)
         # One driver: the 1.75 differs only in pins (its BSP's) and its PWR key.
         list(APPEND srcs "boards/board_waveshare_s3_175c.c" "boards/muse_lcd_bands.c")
+    elseif(CONFIG_MUSE_BOARD_WAVESHARE_S3_216)
+        list(APPEND srcs "boards/board_waveshare_s3_216.c" "boards/muse_lcd_bands.c")
     elseif(CONFIG_MUSE_BOARD_AIPI)
         list(APPEND srcs "boards/board_aipi.c")
     elseif(CONFIG_MUSE_BOARD_ESPRESSIF_BOX_3)

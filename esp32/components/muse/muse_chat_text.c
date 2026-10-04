@@ -113,7 +113,7 @@ static bool next_line(const char **text, int cols, const char **start, size_t *l
         size_t bytes;
         char shown[4];
         int w = muse_text_ascii(end, &bytes, shown);
-        w = w < 0 ? 1 : w;
+        w = muse_text_columns(end) == 2 ? 2 : w < 0 ? 1 : w;   /* CJK punctuation may have stand-ins */
         if (n + w > cols && n) {
             break;
         }
